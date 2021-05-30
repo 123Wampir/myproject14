@@ -1,0 +1,13 @@
+<form [formGroup]="noteForm" class="note-form">
+    <div class="note-form-title">
+      <div class="note-title-label">Note title</div>
+      <input type="text" class="title" formControlName="noteTitle" [(ngModel)]="note.noteTitle">
+    </div>
+    <div class="note-form-text">
+      <div class="note-text-label">Your note</div>
+      <textarea name="note" id="note" class="note" cols="30" rows="10" formControlName="noteText" [(ngModel)]="note.noteText"></textarea>
+    </div>
+    <button class="note-create" (click)="onCreateNote()" [disabled]="getOnEdit()">Create Note</button>
+    <button class="note-clear" (click)="clearData();">Clear Note</button>
+    <button class="note-сhange" (click)="onChangeNote();" [disabled]="!getOnEdit()">Change Note</button>
+</form>
