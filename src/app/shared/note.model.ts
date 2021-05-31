@@ -4,7 +4,6 @@ export class Note {
     noteCreateTime:string;
     noteCreateDate:string;
     id:number;
-    static id=0;
     constructor(title:string,text:string) {
       this.noteTitle=title;
       this.noteText=text;

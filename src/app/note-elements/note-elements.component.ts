@@ -31,10 +31,8 @@ export class NoteElementsComponent implements OnInit {
   }
   onChangeNote(id: number) {
     this.ChangeNote.emit(id);
-    for (let i in this.notes) {
-      if (id == this.notes[i].id)
-        this.MyNotesService.noteToChange = this.notes[i];
-      this.MyNotesService.onEdit = true;
-    }
+    let i=this.notes.findIndex(item=>id===item.id);
+    this.MyNotesService.noteToChange = this.notes[i];
+    this.MyNotesService.onEdit = true;
   }
 }

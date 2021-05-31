@@ -17,14 +17,13 @@ export class AppComponent implements OnInit {
 
   title = 'project14';
   notes: Note[] = [];
-  noteToChange() {
-    return this.MyNotesService.noteToChange;
-  }
 
 
   ngOnInit() {
     this.getData();
-    console.log("this.MyNotesService.notes");
+  }
+  noteToChange() {
+    return this.MyNotesService.noteToChange;
   }
   async getData() {
     try {
@@ -33,9 +32,10 @@ export class AppComponent implements OnInit {
       console.error(err);
     } finally{console.log(this.MyNotesService.notes);}
 
-    console.log(this.MyNotesService.notes);
+    // console.log(this.MyNotesService.notes);
   }
   async onCreateNote(note: Note) {
+    
     try {
       await this.HttpNoteService.postNote(note);
     } catch (err) { console.error(err) }

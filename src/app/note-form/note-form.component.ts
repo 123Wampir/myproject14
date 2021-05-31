@@ -35,7 +35,7 @@ export class NoteFormComponent implements OnInit {
       let note = new Note(this.noteForm.value["noteTitle"],this.noteForm.value["noteText"]);
       this.noteForm.value["noteCreateDate"]=note.noteCreateDate;
       this.noteForm.value["noteCreateTime"]=note.noteCreateTime;
-      this.noteForm.value["id"]=note.id;
+      //this.noteForm.value["id"]=note.noteID;
       console.log(this.noteForm.value);
       this.CreateNote.emit(this.noteForm.value);
       console.log(this.MyNotesService.notes);

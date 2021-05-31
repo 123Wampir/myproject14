@@ -20,6 +20,7 @@ export class HttpNoteService {
     return this.http.post<Note>(this.source,data).toPromise();
   }
   putNote(data:Note){
+    console.log(data)
     return this.http.put<Note>(`${this.source}/${data.id}`,data).toPromise();
   }
   deleteNote(id:number){
